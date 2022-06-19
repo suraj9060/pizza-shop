@@ -5,6 +5,7 @@ import About from "./components/DummyRoutes/About";
 import Contact from "./components/DummyRoutes/Contact";
 import TermsPolicy  from "./components/DummyRoutes/TermsPolicy";
 import NavBar from "./components/NavBar";
+import HomePage from "./Pages/HomePage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/about" component={About} exact />
         <Route path="/contact" component={Contact} exact />
         <Route path="/policy" component={TermsPolicy} exact />
+        <Route path="/" component={HomePage} exact />
       </Switch>
     </BrowserRouter>
   );
