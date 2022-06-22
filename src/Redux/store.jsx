@@ -3,10 +3,12 @@ import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { getAllPizzaReducer } from "./reducers/reducers";
 import { cartReducer } from "./reducers/CartReducer.jsx";
+import { signInUserReducer } from "./reducers/UserReducer";
 
 const rootReducer = combineReducers({
   getAllPizzaReducer: getAllPizzaReducer,
   cartReducer: cartReducer,
+  signInUserReducer: signInUserReducer,
 });
 
 const cartItems = localStorage.getItem("cartItems")
