@@ -7,6 +7,8 @@ import TermsPolicy  from "./components/DummyRoutes/TermsPolicy";
 import NavBar from "./components/NavBar";
 import HomePage from "./Pages/HomePage";
 import CartPage from "./Pages/CartPage";
+import LoginPage from "./Pages/LoginPage";
+import SignUpPage from "./Pages/SignUpPage";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/policy" component={TermsPolicy} exact />
         <Route path="/" component={HomePage} exact />
         <Route path="/cart" component={CartPage} />
+        <Route path="/login" component={LoginPage} exact />
+        <Route path="/signup" component={SignUpPage} exact />
       </Switch>
     </BrowserRouter>
   );

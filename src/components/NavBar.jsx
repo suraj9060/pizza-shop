@@ -15,8 +15,8 @@ const NavBar = () => {
     <>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-                  <Navbar.Brand>
-                      <Image src="images/logo.png" alt="logo" style={{height:50}} />
+          <Navbar.Brand>
+            <Image src="images/logo.png" alt="logo" style={{ height: 50 }} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -24,8 +24,11 @@ const NavBar = () => {
               <LinkContainer to="login">
                 <Nav.Link>Login</Nav.Link>
               </LinkContainer>
+              <LinkContainer to="signup">
+                <Nav.Link>Sign Up</Nav.Link>
+              </LinkContainer>
               <LinkContainer to="cart">
-                <Nav.Link>Cart { cartState.cartItems.length}</Nav.Link>
+                <Nav.Link>Cart {cartState.cartItems.length}</Nav.Link>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row } from "react-bootstrap"
+import { Button, Col, Container, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowRightCircle, BsArrowLeftCircle , BsTrash} from "react-icons/bs";
 import { addToCart, deleteFromCart } from '../Redux/actions/cartAction';
@@ -8,7 +8,8 @@ const CartPage = () => {
     const cartState = useSelector((state) => state.cartReducer);
     const cartItems = cartState.cartItems
     // console.log(cartItems.varients[0]);
-    console.log(cartItems)
+    // console.log(cartItems)
+  const subTotal = cartItems.reduce((sum , itemPrice)=>sum+itemPrice.price , 0)
 
   return (
     <Container>
@@ -96,6 +97,9 @@ const CartPage = () => {
         </Col>
         <Col md={4}>
           <h1>Payment Info</h1>
+          <h4>Sub Total</h4>
+          <h4>Rs : {subTotal} -/</h4>
+          <Button >Check Out</Button>
         </Col>
       </Row>
     </Container>
