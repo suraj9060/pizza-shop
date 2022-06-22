@@ -16,9 +16,9 @@ const HomePage = () => {
     }, [dispatch])
 
         const { loading, pizzas, error } = allState;
-    console.log(loading);
-    console.log(pizzas)
-    console.log(error)
+    // console.log(loading);
+    // console.log(pizzas)
+    // console.log(error)
     
   return (
     <>
