@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import {signInUser} from "../Redux/actions/UserAction"
 
 const SignUpPage = () => {
+  const dispatch = useDispatch()
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +16,7 @@ const SignUpPage = () => {
             alert("password is wrong")
         } else {
             const user = { name, email, password, conformPassword };
-            console.log(user)
+            dispatch(signInUser(user))
         }
         
     };
