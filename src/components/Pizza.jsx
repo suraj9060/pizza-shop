@@ -11,7 +11,8 @@ const Pizza = ({ pizza }) => {
 
   const addToCartHandler = () => {
     dispatch(addToCart(pizza, quentity, varients));
-    // console.log(varient , pizza , quentity)
+    // console.log(varients , pizza , quentity)
+   
   }
 
 

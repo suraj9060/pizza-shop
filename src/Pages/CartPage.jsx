@@ -1,13 +1,14 @@
 import React from 'react'
 import { Col, Container, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from 'react-redux';
-import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
-import { addToCart } from '../Redux/actions/cartAction';
+import { BsArrowRightCircle, BsArrowLeftCircle , BsTrash} from "react-icons/bs";
+import { addToCart, deleteFromCart } from '../Redux/actions/cartAction';
 const CartPage = () => {
     const dispatch = useDispatch()    
     const cartState = useSelector((state) => state.cartReducer);
     const cartItems = cartState.cartItems
     // console.log(cartItems.varients[0]);
+    console.log(cartItems)
 
   return (
     <Container>
@@ -26,8 +27,10 @@ const CartPage = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Col md={7}>
-                    <h5>{item.name}</h5>
+                  <Col md={6}>
+                    <h5>
+                      {item.name} [{item.varients}]
+                    </h5>
                     <h6>
                       Price :{item.quantity} X {item.prices[0][item.varients]} =
                       {item.price}
@@ -62,7 +65,7 @@ const CartPage = () => {
                       />
                     </h6>
                   </Col>
-                  <Col md={5}>
+                  <Col md={4}>
                     <img
                       src={item.image}
                       alt={item.name}
@@ -71,6 +74,19 @@ const CartPage = () => {
                         height: "100px",
                         margin: "5px 0",
                       }}
+                    />
+                    <BsTrash
+                      style={{
+                        cursor: "pointer",
+                        marginLeft: "10px",
+                        fontSize: "30px",
+                      }}
+                      className="text-danger"
+                      onClick={() =>
+                        dispatch(
+                          deleteFromCart(item)
+                        )
+                      }
                     />
                   </Col>
                 </div>

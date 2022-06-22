@@ -1,12 +1,12 @@
-export const addToCart = (pizza, quentity, varients) => (dispatch , getState) => {
+export const addToCart = (pizza, quantity, varient) => (dispatch , getState) => {
   var cartItem = {
     name: pizza.name,
     _id: pizza._id,
     image: pizza.image,
-    varients: varients,
-    quantity: quentity,
+    varients: varient,
+    quantity: quantity,
     prices: pizza.prices,
-    price: pizza.prices[0][varients] * quentity,
+    price: pizza.prices[0][varient] * quantity,
   };
 
   dispatch({ type: "ADD_TO_CART", payload: cartItem });
@@ -15,3 +15,9 @@ export const addToCart = (pizza, quentity, varients) => (dispatch , getState) =>
     JSON.stringify(getState().cartReducer.cartItems)
   );
 };
+
+export const deleteFromCart = (pizza) => (dispatch, getState) => {
+  dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+  const cartItems = getState().cartReducer.cartItems
+  localStorage.setItem("cartItems" , JSON.stringify(cartItems))
+}
