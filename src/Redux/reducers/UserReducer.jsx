@@ -1,6 +1,5 @@
-const initialState = {};
 
-export const signInUserReducer = (state = initialState, action) => {
+export const signInUserReducer = (state = {}, action) => {
   switch (action.type) {
     case "USER_SIGNIN_REQUEST":
       return {
@@ -18,5 +17,27 @@ export const signInUserReducer = (state = initialState, action) => {
       };
     default:
       return state;
+  }
+};
+
+export const loginUserReducer = (state = {}, action) => {
+  switch (action.type) {
+    case "USER_LOGIN_REQUEST":
+      return {
+        loading: true,
+      };
+    case "USER_LOGIN_SUCCESS":
+      return {
+        loading: false,
+        success: true,
+        currentUser: action.payload,
+      };
+    case "USER_LOGIN_FAIL":
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    default:
+      return state 
   }
 };
