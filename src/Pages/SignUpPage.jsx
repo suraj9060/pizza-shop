@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import Error from "../components/Error";
+import Loader from "../components/Loader";
+import Success from "../components/Success";
 import {signInUser} from "../Redux/actions/UserAction"
 
 const SignUpPage = () => {
@@ -9,20 +12,30 @@ const SignUpPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-    const [conformPassword, setConformPassword] = useState("");
+  const [conformPassword, setConformPassword] = useState("");
+  
+  const signUpState = useSelector((state) => state.signInUserReducer);
+  const {error , success, loading} = signUpState
     
-    const handleSignUp = () => {
+  const handleSignUp = (event) => {
+       event.preventDefault(); 
         if (password !== conformPassword) {
             alert("password is wrong")
         } else {
             const user = { name, email, password, conformPassword };
             dispatch(signInUser(user))
         }
-        
+    setName("")
+    setEmail("")
+    setConformPassword("")
+    setPassword("")
     };
   return (
     <>
       <Container>
+        {loading && <Loader />}
+        {success && <Success success="user added successfully" />}
+        {error && <Error error="something went wrong" />}
         <Form>
           <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label>Name</Form.Label>

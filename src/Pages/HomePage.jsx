@@ -5,6 +5,8 @@ import Pizza from '../components/Pizza'
 import {Container , Row , Col} from "react-bootstrap"
 import { useEffect } from 'react'
 import { getAllPizzas } from "../Redux/actions/action.jsx"
+import Loader from '../components/Loader'
+import Error from '../components/Error'
 // import {getAllPizzaReducer} from "../Redux/reducers/reducers"
 const HomePage = () => {
     const dispatch = useDispatch();
@@ -25,9 +27,9 @@ const HomePage = () => {
       <Container>
               {
                   loading ? (
-          <h1>Data Is Loading ...</h1>
+          <Loader />
         ) : error ? (
-          <h1>Something is missing </h1>
+          <Error />
         ) : (
           <Row>
             {pizzas.map((pizza) => {

@@ -13,9 +13,12 @@ const LoginPage = () => {
       window.location.href = "/";
     }
   }, []);
-  const handleLogin = () => {
+  const handleLogin = (event) => {
+     event.preventDefault(); 
     const user = { email, password };
     dispatch(loginUser(user));
+    setEmail("")
+    setPassword("")
   };
   return (
     <>

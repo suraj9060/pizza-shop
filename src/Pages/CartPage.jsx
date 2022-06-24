@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from 'react-redux';
 import { BsArrowRightCircle, BsArrowLeftCircle , BsTrash} from "react-icons/bs";
 import { addToCart, deleteFromCart } from '../Redux/actions/cartAction';
+import Checkout from '../components/Checkout';
 const CartPage = () => {
     const dispatch = useDispatch()    
     const cartState = useSelector((state) => state.cartReducer);
@@ -99,7 +100,7 @@ const CartPage = () => {
           <h1>Payment Info</h1>
           <h4>Sub Total</h4>
           <h4>Rs : {subTotal} -/</h4>
-          <Button >Check Out</Button>
+          <Checkout />
         </Col>
       </Row>
     </Container>
