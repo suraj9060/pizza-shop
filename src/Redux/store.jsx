@@ -5,12 +5,14 @@ import { getAllPizzaReducer } from "./reducers/reducers";
 import { cartReducer } from "./reducers/CartReducer.jsx";
 import { signInUserReducer } from "./reducers/UserReducer.jsx";
 import { loginUserReducer } from "./reducers/UserReducer.jsx";
+import { PlaceOrderReducer } from "./reducers/OrderReducer";
 
 const rootReducer = combineReducers({
   getAllPizzaReducer: getAllPizzaReducer,
   cartReducer: cartReducer,
   signInUserReducer: signInUserReducer,
   loginUserReducer: loginUserReducer,
+  PlaceOrderReducer: PlaceOrderReducer,
 });
 
 const cartItems = localStorage.getItem("cartItems")
@@ -24,8 +26,8 @@ const initialState = {
     cartItems: cartItems,
   },
   loginUserReducer: {
-    currentUser:currentUser,
-  }
+    currentUser: currentUser,
+  },
 };
 const middlewere = [thunk];
 
