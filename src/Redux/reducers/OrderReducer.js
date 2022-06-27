@@ -2,6 +2,7 @@ export const PlaceOrderReducer = (state = {}, action) => {
   switch (action.type) {
     case "PLACE_ORDER_REQUEST":
       return {
+        ...state,
         loading: true,
       };
     case "PLACE_ORDER_SUCCESS":

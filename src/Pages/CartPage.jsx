@@ -100,7 +100,7 @@ const CartPage = () => {
           <h1>Payment Info</h1>
           <h4>Sub Total</h4>
           <h4>Rs : {subTotal} -/</h4>
-          <Checkout />
+          <Checkout subTotal={subTotal}/>
         </Col>
       </Row>
     </Container>
