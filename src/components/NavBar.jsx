@@ -1,18 +1,17 @@
 import React from "react";
 // import Container from "react-bootstrap/Container";
-import{ Nav , Container , NavDropdown} from "react-bootstrap";
+import { Nav, Container, NavDropdown } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
 import { LinkContainer } from "react-router-bootstrap";
-import { Image } from "react-bootstrap"
+import { Image } from "react-bootstrap";
 import { logoutUser } from "../Redux/actions/UserAction";
 
 const NavBar = () => {
- 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const cartState = useSelector((state) => state.cartReducer);
   const userState = useSelector((state) => state.loginUserReducer);
-  const {currentUser} = userState
+  const { currentUser } = userState;
 
   return (
     <>
@@ -27,14 +26,13 @@ const NavBar = () => {
               {currentUser ? (
                 <LinkContainer to="/">
                   {/* <Nav.Link>{currentUser.name}</Nav.Link> */}
-                  <NavDropdown title={currentUser.name}id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">
-                      Order
-                    </NavDropdown.Item>
-                    <NavDropdown.Item onClick={()=>dispatch(logoutUser())}>
+                  <NavDropdown title={currentUser.name} id="basic-nav-dropdown">
+                    <LinkContainer to="orders">
+                      <NavDropdown.Item>Order</NavDropdown.Item>
+                    </LinkContainer>
+                    <NavDropdown.Item onClick={() => dispatch(logoutUser())}>
                       Log Out
                     </NavDropdown.Item>
-                   
                   </NavDropdown>
                 </LinkContainer>
               ) : (
