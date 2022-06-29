@@ -21,7 +21,7 @@ export const placeOrder = (token, subTotal) => async (dispatch, getState) => {
 };
 
 export const getUserOrders = () => async (dispatch, getState) => {
-  const currentUser = getState().loginUserReducer.currentUser
+  const currentUser = getState().loginUserReducer.currentUser;
   dispatch({ type: "USER_ORDER_REQUEST" });
 
   try {

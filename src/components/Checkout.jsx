@@ -8,8 +8,8 @@ import Error from "./Error";
 import Success from "./Success";
 
 const Checkout = ({ subTotal }) => {
-  const orderStatus = useSelector((state) => state.PlaceOrderReducer);
-  const { loading, error, success } = orderStatus;
+  const orderState = useSelector((state) => state.PlaceOrderReducer);
+  const { loading, error, success } = orderState;
   const dispatch = useDispatch();
   const tokenHandler = (token) => {
     dispatch(placeOrder(token, subTotal));
@@ -19,11 +19,11 @@ const Checkout = ({ subTotal }) => {
   return (
     <>
       {loading && <Loader />}
-      {error && <Error />}
-      {success && <Success />}
+      {error && <Error error={"something went wrong"} />}
+      {success && <Success success={"Order placed successfully"} />}
 
       <StripeCheckout
-        amount={subTotal * 1000}
+        amount={subTotal * 100}
         shippingAddress
         token={tokenHandler}
         stripeKey="pk_test_51LFIGAKqrH31VSJTBUD1OvFkjtdmkV638spGzzSjHwncsw1km7JU9hrTS5sW4M3GjHHoJux6CSnezfuJf5f9wp6x00SOeMDu28"

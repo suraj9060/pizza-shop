@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Row, Col , Modal , Image} from "react-bootstrap";
 import { useState } from "react";
 import { addToCart } from "../Redux/actions/cartAction.jsx";
-import { useDispatch, useSelector,  } from "react-redux";
+import { useDispatch  } from "react-redux";
 const Pizza = ({ pizza }) => {
   const [varients, setVarient] = useState("small");
     const [quentity, setQuentity] = useState(1);
