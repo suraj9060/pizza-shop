@@ -10,6 +10,7 @@ import CartPage from "./Pages/CartPage";
 import LoginPage from "./Pages/LoginPage";
 import SignUpPage from "./Pages/SignUpPage";
 import OrderPage from "./Pages/OrderPage";
+import AdminPage from "./Pages/AdminPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <TopBar />
       <NavBar />
       <Switch>
+        <Route path="/admin" component={AdminPage} />
         <Route path="/about" component={About} exact />
         <Route path="/contact" component={Contact} exact />
         <Route path="/policy" component={TermsPolicy} exact />
