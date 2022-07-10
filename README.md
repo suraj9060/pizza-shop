@@ -1,8 +1,5 @@
-# pizza-shop-starter-template
-Online Pizza Shop Template to start work on project.all setup has been done you just need to install npm packages with npm install command in clinet directory
 
-#go to terminal or comamnd prompt -> open this within correct path if you folder name is client goto client path or if your folder name is frontend than go to frontend folder path in terminal
-#and install node_modules folder use belwo command
-# npm install
-it will install all the dependencies of node_modules no need to download extra modules
-if you stuck please DM on instagram : @technical_update
+![Screenshot (46)](https://user-images.githubusercontent.com/87435542/178153028-85aad0df-ba6b-4584-af89-42a9e0cbe925.png)
+![Screenshot (47)](https://user-images.githubusercontent.com/87435542/178153030-763cfb01-3c21-49ea-8a4f-ecef5b716a1c.png)
+![Screenshot (48)](https://user-images.githubusercontent.com/87435542/178153031-6342dc60-9315-48fa-90d8-dc60676a4028.png)
+![Screenshot (49)](https://user-images.githubusercontent.com/87435542/178153034-db673d27-9cf0-4449-8ce0-2fd1cd2a02cb.png)
