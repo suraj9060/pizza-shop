@@ -25,7 +25,6 @@
 8. Nodejs
 9. Mongoose
 
-10. Material UI
 # Video Demo of Website 🎥
 
 
